@@ -4,54 +4,69 @@ import java.util.Scanner;
 public class Magic{
 
 
-    public int calculate(int myNumber){
+    public double calculate(double myNumber){
 
-        int stepOne = myNumber*myNumber;
-        int stepTwo = stepOne + myNumber;
-        int stepThree = stepTwo / myNumber;
-        int stepFour = stepThree + 17;
-        int stepFive = stepFour - myNumber;
-        int stepSix = stepFive / 6;
+        double stepOne = myNumber*myNumber;
+        double stepTwo = stepOne + myNumber;
+        double stepThree = stepTwo / myNumber;
+        double stepFour = stepThree + 17;
+        double stepFive = stepFour - myNumber;
+        double stepSix = stepFive / 6;
+        
         return stepSix;
+      
     
     }
 
 
-    public int getUserNumber(){
+    public double getUserNumber(){
 
         Scanner testObj = new Scanner(System.in);
-        System.out.println("Input Number!");
-        int userNumber = testObj.nextInt();
-        testObj.close();
-        System.out.print(userNumber);
-        return userNumber;
-        
+
+          double userNumber = testObj.nextDouble();
+          testObj.close(); 
+          return userNumber;
+        } 
+
     }
 
 
-    public void EndUI(int output){
+
+    public void endUI(double output, double input){
 
         System.out.println();
+        System.out.println("The number you put in was " + input);
         System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("tset test woah cool");
-        System.out.println("daniel is gay");
-        System.out.println(output);
+        System.out.println("Using our magic powers, we changed your input to " + output);
         System.out.println();
         System.out.println();
     }
+
+      public void frontUI(){
+
+      System.out.println("Welcome to our Java magic show!");
+      System.out.println();
+      System.out.println("For this trick, we shall convert any number, into one we shall predict!");
+      System.out.println();
+      System.out.println("Input your number down below!");
+      System.out.println();
+  }
 
     public static void main(String[] args){
-        
+    
 
     
         var calculation = new Magic();
-        var userNumber = calculation.getUserNumber();
-        var finalValue = calculation.calculate(userNumber);
 
-        calculation.EndUI(finalValue);
+        calculation.frontUI();
+        
+        double userNumber = calculation.getUserNumber();
+
+        double finalValue = calculation.calculate(userNumber);
+
+        calculation.endUI(finalValue, userNumber);
     
     }
+
+
 }

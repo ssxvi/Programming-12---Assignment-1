@@ -1,0 +1,2 @@
+language = "undefined"
+run = "javac Magic.java && java Magic"
