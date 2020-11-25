@@ -37,7 +37,7 @@ public class Magic{
         System.out.println();
         System.out.println();
         System.out.println();
-        System.out.println();
+        System.out.println("daniel is gay");
         System.out.println(output);
         System.out.println();
         System.out.println();
